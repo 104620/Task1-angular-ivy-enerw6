@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroupDirective, NgForm, FormGroup,Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
 
@@ -38,7 +38,6 @@ export class AppComponent {
   birthDateFormControl = new FormControl('', [
     Validators.required,
     // Validators.pattern('^[0-9/]$')
-
   ]);
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -49,10 +48,23 @@ export class AppComponent {
     Validators.minLength(9),
     Validators.maxLength(9)
   ]);
+  
+  registrationForm = new FormGroup({
+    nameFormControl: this.nameFormControl,
+    surNameFormControl:  this.surNameFormControl,
+    birthDateFormControl:  this.birthDateFormControl,
+    emailFormControl:  this.emailFormControl,
+    mobileFormControl:  this.mobileFormControl
+  });
+
+
   matcher = new MyErrorStateMatcher();
 
+
   onSubmit(): void {
-    console.log('Your order has been submitted');
+    console.warn('Your order has been submitted', this.registrationForm.value);
+    this.registrationForm.reset();
+    this.matcher = new MyErrorStateMatcher();
   }
 }
 export class DatepickerOverviewExample {}
