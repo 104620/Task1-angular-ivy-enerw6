@@ -24,26 +24,21 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class InputErrorStateMatcherExample {
+export class AppComponent {
   nameFormControl = new FormControl('', [
     Validators.required,
-    Validators.email,
   ]);
   surNameFormControl = new FormControl('', [
     Validators.required,
-    Validators.email,
   ]);
   birthDateFormControl = new FormControl('', [
     Validators.required,
-    Validators.email,
   ]);
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
   mobileFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
   ]);
   matcher = new MyErrorStateMatcher();
 }

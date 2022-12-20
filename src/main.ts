@@ -42,7 +42,7 @@ import {
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {InputErrorStateMatcherExample} from './app/app.component';
+import {AppComponent} from './app/app.component';
 
 @NgModule({
   exports: [
@@ -94,9 +94,9 @@ export class DemoMaterialModule {}
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [InputErrorStateMatcherExample],
-  declarations: [InputErrorStateMatcherExample],
-  bootstrap: [InputErrorStateMatcherExample],
+  entryComponents: [AppComponent],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
   providers: []
 })
 export class AppModule {}
