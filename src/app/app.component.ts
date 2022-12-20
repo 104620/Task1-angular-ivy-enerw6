@@ -50,5 +50,9 @@ export class AppComponent {
     Validators.maxLength(9)
   ]);
   matcher = new MyErrorStateMatcher();
+
+  onSubmit(): void {
+    console.log('Your order has been submitted');
+  }
 }
 export class DatepickerOverviewExample {}

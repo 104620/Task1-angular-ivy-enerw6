@@ -1,10 +1,10 @@
-<header><h1>Registration form</h1></header>
-  <section class="container">
-    <form class="example-form">
+<div class="container">
+  <section>
+    <form class="example-form" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
           <mat-label>Name</mat-label>
           <input matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"
-                placeholder="Name">
+                placeholder="Name" value="Paljko">
           <mat-error *ngIf="nameFormControl.errors && !nameFormControl.hasError('required')">
             Please enter a valid name
           </mat-error>
@@ -17,7 +17,7 @@
         <mat-form-field class="example-full-width">
           <mat-label>Surname</mat-label>
           <input matInput [formControl]="surNameFormControl" [errorStateMatcher]="matcher"
-                placeholder="Surname">
+                placeholder="Surname" value="Urbanek">
           <mat-error *ngIf="surNameFormControl.errors && !surNameFormControl.hasError('required')">
             Please enter a valid surname
           </mat-error>
@@ -44,7 +44,7 @@
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
           <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                placeholder="Email">
+                placeholder="Email" value="palko@gmail.com">
           <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
             Please enter a valid email address
           </mat-error>
@@ -56,7 +56,7 @@
         <mat-form-field class="example-full-width">
         <mat-label>Mobilephone</mat-label>
         <span matPrefix>+421 &nbsp;</span>
-        <input type="tel" matInput [formControl]="mobileFormControl" [errorStateMatcher]="matcher" placeholder="955123456">
+        <input type="tel" matInput [formControl]="mobileFormControl" [errorStateMatcher]="matcher" placeholder="955123456" value="955123456">
         <mat-error *ngIf="mobileFormControl.errors">
         Please enter a valid mobilephone number
         </mat-error>
@@ -66,3 +66,4 @@
       <br><br><br><button type="submit" id="submit">Send</button>
     </div>
   </section>
+</div>
