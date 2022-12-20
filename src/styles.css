@@ -1,4 +1,6 @@
 /* Add application styles & imports to this file! */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 .basic-container {
   padding: 5px;
 }
@@ -14,19 +16,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-}
-
-header {
-  font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
-  text-align: center;
-  margin-left: 5%;
-  margin-right: 7%;
-}
-
-header h1 {
-  color: black;
-  top: 0;
-  left: 0;
 }
 
 footer {

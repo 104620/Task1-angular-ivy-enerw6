@@ -1,7 +1,68 @@
 <div class="content">
   <header><h1>Registration form</h1></header>
   <section class="container">
-    <form action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm();">
+    <form class="example-form">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"
+                placeholder="Name">
+          <mat-error *ngIf="nameFormControl.hasError('name') && !nameFormControl.hasError('required')">
+            Please enter a valid name
+          </mat-error>
+          <mat-error *ngIf="nameFormControl.hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Surname</mat-label>
+          <input matInput [formControl]="surNameFormControl" [errorStateMatcher]="matcher"
+                placeholder="Surname">
+          <mat-error *ngIf="surNameFormControl.hasError('surName') && !surNameFormControl.hasError('required')">
+            Please enter a valid surname
+          </mat-error>
+          <mat-error *ngIf="surNameFormControl.hasError('required')">
+            Surname is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Birthdate</mat-label>
+        <input matInput [formControl]="birthDateFormControl" [errorStateMatcher]="matcher"
+              placeholder="">
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error *ngIf="birthDateFormControl.hasError('birthDate') && !birthDateFormControl.hasError('required')">
+          Please enter a valid birthdate
+        </mat-error>
+        <mat-error *ngIf="birthDateFormControl.hasError('required')">
+          Birthdate is <strong>required</strong>
+        </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                placeholder="Email">
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Mobilephone-number (Optional)</mat-label>
+        <input matInput [formControl]="mobileFormControl" [errorStateMatcher]="matcher"
+              placeholder="Mobile">
+        <mat-error *ngIf="mobileFormControl.hasError('surName')">
+          Please enter a valid surname
+        </mat-error>
+        </mat-form-field>
+  </form>
+    <!-- <form action="" method="post" enctype="multipart/form-data">
         <h2>Personal information</h2>
         <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
@@ -14,8 +75,8 @@
         <mat-error *ngIf="emailFormControl.hasError('required')">
           Email is <strong>required</strong>
         </mat-error>
-      </mat-form-field>
-        <div class="form-info">
+      </mat-form-field> -->
+        <!-- <div class="form-info">
             <div class="form-row">
                 <div>
                   <label class="required_indicator bold">*</label>
@@ -48,25 +109,12 @@
                 <label>Mobile-number</label>
                 <input type="tel" class="form-control" placeholder="Enter mobile number" id="Mobnumber" onchange="validateMobileNumber(this);">
             </div>
-        </div>
-    </form>
+        </div> -->
+    <!-- </form> -->
 
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-               placeholder="Ex. pat@example.com">
-        <mat-hint>Errors appear instantly!</mat-hint>
-        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-          Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-    </form>
+    
     <div class="form-2info">
-      <br><br><br><input type="submit" id="submit" onclick="validateAll()">
+      <br><br><br><button type="submit" id="submit">Send</button>
     </div>
   </section>
 </div>
