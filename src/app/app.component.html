@@ -13,7 +13,14 @@
             Name is <strong>required</strong>
           </mat-error>
         </mat-form-field>
-
+          <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      
         <mat-form-field class="example-full-width">
           <mat-label>Surname</mat-label>
           <input matInput [formControl]="surNameFormControl" [errorStateMatcher]="matcher"
@@ -29,7 +36,7 @@
         <mat-form-field class="example-full-width">
         <mat-label>Birthdate</mat-label>
         <input matInput [formControl]="birthDateFormControl" [errorStateMatcher]="matcher"
-              placeholder="">
+              placeholder="Birthdate">
         <mat-hint>Errors appear instantly!</mat-hint>
         <mat-error *ngIf="birthDateFormControl.hasError('birthDate') && !birthDateFormControl.hasError('required')">
           Please enter a valid birthdate

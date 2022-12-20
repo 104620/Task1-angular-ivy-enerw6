@@ -1,19 +1,3 @@
-// import './polyfills';
-
-// import { enableProdMode } from '@angular/core';
-// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-// import { AppModule } from './app/app.module';
-
-// platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
-//   // Ensure Angular destroys itself on hot reloads.
-//   if (window['ngRef']) {
-//     window['ngRef'].destroy();
-//   }
-//   window['ngRef'] = ref;
-
-//   // Otherwise, log the boot error
-// }).catch(err => console.error(err));
 import './polyfills';
 
 import {CdkTableModule} from '@angular/cdk/table';
@@ -58,7 +42,7 @@ import {
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { AppComponent } from './app/app.component';
+import {InputErrorStateMatcherExample} from './app/app.component';
 
 @NgModule({
   exports: [
@@ -110,11 +94,16 @@ export class DemoMaterialModule {}
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [AppComponent],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent],
+  entryComponents: [InputErrorStateMatcherExample],
+  declarations: [InputErrorStateMatcherExample],
+  bootstrap: [InputErrorStateMatcherExample],
   providers: []
 })
 export class AppModule {}
 
 platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+/**  Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license */
