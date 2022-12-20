@@ -33,7 +33,7 @@
         <mat-label>Choose a birthday date</mat-label>
         <input matInput [matDatepicker]="picker" [formControl]="birthDateFormControl" [errorStateMatcher]="matcher"
         placeholder="Birthdate">
-        <mat-error *ngIf="birthDateFormControl.errors && !birthDateFormControl.hasError('required')">
+        <mat-error *ngIf="birthDateFormControl.hasError('pattern') && !birthDateFormControl.hasError('required')">
         Please enter a valid birthdate
         </mat-error>
         <mat-error *ngIf="birthDateFormControl.hasError('required')">
