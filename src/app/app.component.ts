@@ -27,18 +27,26 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class AppComponent {
   nameFormControl = new FormControl('', [
     Validators.required,
+    Validators.minLength(4),
+    Validators.pattern('[a-zA-Z ]*')
   ]);
   surNameFormControl = new FormControl('', [
     Validators.required,
+    Validators.minLength(4),
+    Validators.pattern('[a-zA-Z ]*')
   ]);
   birthDateFormControl = new FormControl('', [
     Validators.required,
+    Validators.pattern('^[0-9/ ]*')
   ]);
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
   mobileFormControl = new FormControl('', [
+    Validators.pattern('[0-9]*'),
+    Validators.minLength(9),
+    Validators.maxLength(9)
   ]);
   matcher = new MyErrorStateMatcher();
 }
