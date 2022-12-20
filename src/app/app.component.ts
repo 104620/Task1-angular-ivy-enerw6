@@ -62,9 +62,15 @@ export class AppComponent {
 
 
   onSubmit(): void {
-    console.warn('Succesfull registration!', this.registrationForm.value);
-    this.registrationForm.reset();
-    this.matcher = new MyErrorStateMatcher();
+    if(this.registrationForm.valid) {
+      console.warn('Succesfull registration!', this.registrationForm.value);
+      this.registrationForm.reset();
+      this.matcher = new MyErrorStateMatcher();
+    }
+    else{
+      //Never called because submit button is disabled. Possible TODO to let the know for incorrect fill form.  
+        console.log("You didn't fill the form correctly.")
+    }
   }
 }
 export class DatepickerOverviewExample {}

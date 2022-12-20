@@ -62,7 +62,7 @@
         </mat-error>
       </mat-form-field>
       <div class="form-2info">
-      <br><br><br><button type="submit" id="submit">Send</button>
+      <br><br><br><button type="submit" id="submit" [disabled]="!registrationForm.valid">Send</button>
     </div>
   </form>
   </section>
