@@ -62,7 +62,7 @@ export class AppComponent {
 
 
   onSubmit(): void {
-    console.warn('Your order has been submitted', this.registrationForm.value);
+    console.warn('Succesfull registration!', this.registrationForm.value);
     this.registrationForm.reset();
     this.matcher = new MyErrorStateMatcher();
   }
